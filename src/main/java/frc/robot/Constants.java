@@ -16,5 +16,6 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
-  public static int compressionTime = 3;
+  public static int compressionTime = 3000; //Units in milliseconds
+  public static int shootTime = 1000; //Units in milliseconds
 }

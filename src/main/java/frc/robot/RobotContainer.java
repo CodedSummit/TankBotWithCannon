@@ -13,6 +13,7 @@ import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
@@ -55,7 +56,7 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-    m_driverController.b().onTrue(new ChargeShoot(m_shooterSubsystem, m_shooterSubsystem.m_compressor, m_shooterSubsystem.m_shooter));
+    m_driverController.b().onTrue(new InstantCommand(() ->m_shooterSubsystem.shoot(), m_shooterSubsystem));
   }
 
   /**
